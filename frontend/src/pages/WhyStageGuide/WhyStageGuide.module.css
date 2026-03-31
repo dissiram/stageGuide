@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+.why {
+  font-family: "Poppins", sans-serif;
+  padding: 80px 24px;
+  background: #f8fbff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TITRE */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 26px;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 60px;
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background: #1e293b;
+  opacity: 0.5;
+}
+
+/* GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: end;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* IMAGE */
+.imageWrapper {
+  position: relative;
+}
+
+.imageWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+}
+
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Carte centrale plus haute */
+.cardCenter img {
+  height: 360px;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* TEXTE BAS */
+.pill {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  z-index: 2;
+
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  max-width: calc(100% - 36px);
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .card img {
+    height: 280px;
+  }
+
+  .cardCenter img {
+    height: 300px;
+  }
+
+  .pill {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
